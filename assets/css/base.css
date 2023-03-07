@@ -1,0 +1,125 @@
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: rgb(238, 77, 45);
+    --primary-color-rgba: rgba(238, 77, 45,0.1);
+    --border-color: #d3d3d3;
+    --navbar-height: 34px;
+    --header-height:120px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+}
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Animation*/
+@keyframes fade-in{
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+@keyframes growth{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*Modal*/
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    animation: fade-in linear 0.2s;
+}
+
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+.modal__body{
+    margin: auto;
+    background-color: var(--white-color);
+    border-radius: 6px;
+    z-index: 2;
+    animation: growth linear 0.2s;
+}
+
+/*Button styles*/
+
+.btn{
+    min-width: 142px;
+    min-height: 36px;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    background-color: var(--white-color);
+    font-weight: 500;
+    color: var(--text-color);  
+    cursor: pointer;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover{
+    background-color: #efefef;
+}
+
+.btn.btn--primary{
+    margin-left: 10px;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--with-icon{
+    height: 32px;
+    min-width: 45%;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.auth-form__socials-icon{
+    font-size: 1.8rem;
+}

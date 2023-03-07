@@ -1,0 +1,533 @@
+.header {
+    height: var(--header-height);
+    background-image: linear-gradient(#ee4d2d,#ff7337);
+    
+}
+
+.header__navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__nav-list {
+    list-style: none;
+    padding-left: 0px;
+    margin: 4px 0px 0px 0px;
+}
+
+.header__nav-item {
+    margin: 0 8px 0 8px;
+    position: relative;
+}
+
+
+.header__nav-item,.header__nav-item-link {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 250;
+}
+
+.header__nav-item,.header__nav-item-link,.header__nav-icon-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.header__nav-item--strong {
+    font-weight: 450;
+    
+}
+
+.header__nav-item--separate::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1.2px;
+    height: 13px;
+    background-color: #fff;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-45%);
+
+}
+
+
+.header__nav-icon-link{
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.header__nav-item:hover,
+.header__nav-item-link:hover,
+.header__nav-icon-link:hover{
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+}
+
+.header__nav-icon {
+    font-size: 1.6rem;
+    margin: 0 4px;
+}
+
+.header__nav-item-no-cur {
+    cursor: text;
+    color: var(--white-color);
+}
+
+/*Tải ứng dụng - QR code*/
+
+.header__qr {
+    background-color: var(--white-color);
+    width: 192px;
+    position: absolute;
+    left: 0;
+    top: 140%;
+    padding: 8px;
+    border-radius: 4px;
+    display: none;
+    cursor: default;
+    animation: fade-in ease 0.5s;
+}
+
+.header__qr::before {
+    position: absolute;
+    left: 0;
+    top: -10px;
+    width: 100%;
+    height: 20px;
+    content: "";
+    display: block;
+    
+}
+
+.header__nav-item--has-qr:hover .header__qr{
+    display: block ;
+    
+}
+
+.header__qr-img {
+    width: 100%;
+}
+
+.header__qr-apps {
+    display: flex;
+    height: 16px;
+    justify-content: space-between;
+    margin-left: 12px;
+    margin-right: 10px;
+    
+}
+
+/*Thông báo*/
+
+.header__nav-item--has-notify:hover .header__notify{
+    display: block;
+}
+
+.header__notify{
+    position: absolute;
+    top: 140%;
+    right: 0;
+    width: 400px;
+    border-radius: 4px;
+    border: 1px solid #d3d3d3;
+    background-color: var(--white-color);
+    cursor: default;
+    transform-origin: 90% top;
+    animation: growth ease 0.2s;
+    will-change: opacity,transform;
+    display: none;
+    z-index: 2;
+}
+
+.header__notify::before{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width:20px 30px;
+    border-color: transparent transparent white transparent;
+    right: 14px;
+    top: -28px;
+}
+
+.header__notify::after {
+    position: absolute;
+    right: 0;
+    top: -12px;
+    width: 90px;
+    height: 20px;
+    content: "";
+    display: block;
+    
+}
+
+.header__notify-header{
+    height: 40px;
+    background-color: var(--white-color);
+}
+.header__notify-header h3{
+    color:#9d9c9c ;
+    margin: 0 0 0 12px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.header__notify-list{
+    
+    padding: 0;
+}
+
+
+.header__notify-item{
+    background-color: var(--primary-color-rgba);
+}
+
+.header__notify-item:hover{
+    background-color: #f8f8f8;
+}
+
+.header__notify-link{
+    display: flex;
+    text-decoration: none;
+    padding: 10px;
+    width: 100% ;
+}
+.header__notify-img{
+    width: 60px;
+    object-fit: contain;
+}
+
+.header__notify-info {
+    margin-left: 12px;
+}
+
+.header__notify-name{
+    font-size: 1.3rem;
+    color: #000;
+    font-weight: 400;
+    display: block;
+    margin-top: 8px;
+}
+
+.header__notify-descrition{
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+    display: block;
+    margin-top: 10px;
+}
+
+.header__notify-footer{
+    text-align: center;
+    display: block;
+}
+
+.header__notify-footer-btn{
+    display: inherit;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 8px 0px;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/*Authen Modal */
+.auth-form__container{
+    padding: 0px 32px;
+    width: 500px;
+}
+
+.auth-form__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 12px;
+}
+
+.auth-form__heading{
+    font-size: 2.2rem;
+    font-weight: 450;
+    color: var(--text-color);
+}
+
+.auth-form__switch-btn{
+    font-size: 1.5rem;
+    font-weight: 450;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.auth-form__input{
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    padding: 0px 12px;
+    font-size: 1.4rem;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    outline: none;
+}
+
+.auth-form__input:focus{
+    border: 1.6px solid #888;
+}
+
+.auth-form__rule{
+    margin-top: 25px;
+    margin-left: 12px;
+    margin-bottom: 80px;
+}
+
+.auth-form__policy-text{
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 450;
+
+}
+
+.auth-form__policy-link{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.auth-form__controls{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: right;
+}
+
+.auth-form__socials{
+    padding: 12px 30px ;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0px 0px 4px 4px;
+}
+.btn.btn--with-icon.btn--with-icon-fb{
+    background-color: #139df8;
+    color: var(--white-color);
+}
+
+.btn.btn--with-icon.btn--with-icon-gg{
+    background-color: #fb4343;
+    color: var(--white-color);
+}
+
+.auth-form__faq{
+    display: flex;
+    justify-content: right;
+    margin-top: 25px;
+    margin-left: 12px;
+    margin-bottom: 80px;
+}
+.auth-form__faq-forgot{
+    position: relative;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+.auth-form__faq-forgot::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1.2px;
+    height: 16px;
+    background-color: #888888;
+    top: 50%;
+    right: -9px;
+    transform: translateY(-45%);
+    cursor: default;
+}
+.auth-form__faq-need-help{
+    margin-left: 16px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #888;
+    font-weight: 500;
+}
+
+/*Header with search*/
+
+.header-with-search{
+    height: var(--header-with-search-height);
+    display: flex;
+    align-items: center;
+}
+.header__logo{
+    width: 200px;
+}
+.header__logo-img{
+    width: 150px;
+    margin-left: 10px;
+    cursor: pointer;
+
+}
+
+.header__search{
+    background-color: var(--white-color);
+    height: 42px;
+    flex: 1;
+    display: flex;
+    border-radius: 3px;
+    align-items: center;
+}
+.header__cart{
+    width: 164px;
+    position: relative;
+    text-align: center
+    
+}
+
+.header__cart-img{
+    margin: 8px 8px 0px 8px ;
+    color: var(--white-color);
+    font-size: 2.6rem;
+    cursor: pointer;
+    
+}
+
+.header__search-input-wrap{
+    position: relative;
+    flex: 1;
+    z-index: 1;
+}
+
+.header__search-input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    padding-left: 12px;
+    border-radius: 3px;
+}
+
+.header__search-btn{
+    background-color: var(--primary-color);
+    border: none;
+    height: 34px;
+    border-radius: 2px;
+    margin-right: 4px;
+    width: 60px;
+    cursor: pointer;
+}
+
+.header__search-btn:hover{
+    background-color: rgb(247,95,65);
+}
+
+.header__search-btn-img{
+    font-size: 2rem;
+    color: var(--white-color);
+}
+
+.header__search-history{
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    width: calc(100% - 16px);
+    background-color: var(--white-color);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px #b9b9b9;
+    overflow: hidden;
+    display: none;
+}
+
+.header__search-history-heading{
+    font-size: 1.45rem;
+    color: #b0b0b0;
+    font-weight: 400;
+    margin: 8px 12px;
+}
+
+.header__search-history-list{
+    padding: 0;
+    list-style: none;
+    margin: 6px 0 0;
+}
+
+.header__search-history-item{
+    height: 40px;
+}
+
+.header__search-history-item:hover{
+    background-color: #f3f3f3;
+}
+
+.header__search-history-item-link{
+    text-decoration: none;
+    line-height: 40px;
+    font-size: 1.2rem;
+    font-weight: 410;
+    margin: 6px 12px ;
+    color: var(--text-color);
+    display: block;
+}
+
+.header__search-input:focus~.header__search-history{
+    display: block;
+}
+
+
+.header__cart:hover .header__cart-empty{
+    display: block;
+}
+
+.header__cart-empty{
+        position: absolute;
+        top: 140%;
+        right: 43px;
+        width: 380px;
+        border-radius: 4px;
+        border: 1px solid #d3d3d3;
+        background-color: var(--white-color);
+        cursor: default;
+        transform-origin: 95% top;
+        animation: growth ease 0.2s;
+        will-change: opacity,transform;
+        text-align: center;
+        z-index: 2;
+        display: none;
+}
+
+.header__cart-empty::before{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width:20px 30px;
+    border-color: transparent transparent white transparent;
+    right: 6px;
+    top: -32px;
+}
+
+.header__cart-empty::after {
+    position: absolute;
+    right: 0;
+    top: -18px;
+    width: 70px;
+    height: 20px;
+    content: "";
+    display: block;
+    
+}
+
+.header__cart-empty-img{
+    width: 30%;
+    margin-top: 50px;
+}
+
+.header__cart-empty-header {
+    margin: auto;
+}
+.header__cart-empty-header h3{
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 50px;
+    color: #949494;
+}

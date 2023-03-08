@@ -13,6 +13,7 @@
     list-style: none;
     padding-left: 0px;
     margin: 4px 0px 0px 0px;
+    display: flex;
 }
 
 .header__nav-item {
@@ -30,7 +31,7 @@
 }
 
 .header__nav-item,.header__nav-item-link,.header__nav-icon-link {
-    display: inline-flex;
+    display: flex   ;
     align-items: center;
 }
 
@@ -59,8 +60,7 @@
 }
 
 .header__nav-item:hover,
-.header__nav-item-link:hover,
-.header__nav-icon-link:hover{
+.header__nav-item-link:hover{
     color: rgba(255,255,255,0.7);
     cursor: pointer;
 }
@@ -350,6 +350,85 @@
     text-decoration: none;
     color: #888;
     font-weight: 500;
+}
+
+
+.header__nav-item-user-img{
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.header__user{
+    position: absolute;
+    top: 160%;
+    right: 0;
+    width: max-content;
+    border-radius: 4px;
+    background-color: var(--white-color);
+    transform-origin: 90% top;
+    animation: growth ease 0.2s;
+    will-change: opacity,transform;
+    z-index: 1;
+    display: none;
+}
+
+.header__user::before{
+    position: absolute;
+    content: "";
+    border-width: 10px 20px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    top: -18px;
+    right: 14px;
+    z-index: -1;
+}
+
+.header__user::after{
+    position: absolute;
+    content: "";
+    top: -12px;
+    width:  80px;
+    height: 20px;
+    right: 0px;
+    top: -12px;
+    display: block;
+}
+
+.header__nav-item:hover .header__user{
+    display: block;
+}
+
+.header__user-list{
+    background-color: var(--white-color);
+    list-style: none;
+    border-radius: 2px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.header__user-item{
+    height: 32px;
+    display: flex;    
+}
+
+.header__user-item:hover{
+    background-color: #f8f8f8;
+}
+
+.header__user-item:hover .header__user-link{
+    color: #29b9a7;
+}
+
+.header__user-link{
+    text-decoration: none;
+    margin-left: 15px;
+    margin-right: 22px;
+    margin-top: 1px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 8px 0;
+    color: var(--text-color);
 }
 
 /*Header with search*/
